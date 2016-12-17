@@ -1,17 +1,27 @@
 /* Notepad Bounding Box
  * ====================
  * 	Allows for wrapping of a notepad and the ability to add margin
- * 	
+ * 	Additionaly fixes background issues with non-equal column heights
  */
 .notepad-bounding-box {
 	margin: $bounding-margin;
 	background-color: $pad-background;
 }
 
+/* Notepad Bounding Screen
+ * =======================
+ *	Set the minimum height for the bounding box to be the full screen
+ * 	Perfect for full page layouts
+ */
 .notepad-bounding-screen {
 	min-height: 100vh;
 }
 
+/* Notepad Bounding Organizer
+ * ==========================
+ * 	An organizational wrapper that allows for columns of notepads side-by-side
+ * 	To achieve the desired affect the organizer must be used in conjunction with .notepad-column
+ */
 .notepad-bounding-organizer {
 	width: 100%;
 	max-width: 100%;
@@ -19,6 +29,10 @@
 	flex-direction: row;
 }
 
+/* Notepad
+ * =======
+ * 	The default notepad with column flexbox to allow for upstream notes
+ */
 .notepad {
 	width: 100%;
 	height: 100%;
@@ -33,15 +47,30 @@
 	flex-direction: column;
 }
 
+/* Notepad Blank
+ * =============
+ * 	Blank notepad backgrounds
+ */
 .notepad-blank {
-	background: inherit !important;
+	background: inherit;
 }
 
+/* Notepad Column
+ * ==============
+ * 	A notepad that will sit side by side with other notepads. 
+ *	To reach the desired affect you must use in conjunction with .notepad-bounding-organizer
+ */
 .notepad-column {
 	width: auto;
 	min-width: auto;
 }
 
+/* Note
+ * ====
+ * 	A note is a div that sits within a notepad and flows upstream.
+ * 	Basic notes act as parent flex items with row direction
+ * 	For many use cases you should add the .note class (Changes flex to block)
+ */
 .note {
 	background-color: $note-color;
     -webkit-box-shadow: 0px 5px 5px 0px darken($pad-color, 25%);
@@ -57,6 +86,12 @@
 	justify-content: space-around;
 }
 
+/* Note Image
+ * ==========
+ * 	Removes background color and padding to make a background image more usable.
+ * 	Uses background-size cover to fill entire div with image.
+ * 	NOTE: Image must be set with background-image: url();
+ */
 .note-image {
 	background-color: auto;
 	padding: 0;
@@ -66,6 +101,10 @@
 	background-position: center;
 }
 
+/* Ruled
+ * =====
+ *	Display a note as a block element as opposed to a flex box.
+ */
 .ruled {
 	display: block !important;
 }
