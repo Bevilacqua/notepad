@@ -1,6 +1,11 @@
+/* Notepad Bounding Box
+ * ====================
+ * 	Allows for wrapping of a notepad and the ability to add margin
+ * 	
+ */
 .notepad-bounding-box {
 	margin: $bounding-margin;
-	background-color: $pad-color;
+	background-color: $pad-background;
 }
 
 .notepad-bounding-screen {
@@ -20,12 +25,16 @@
 	min-width: 100%;
 	max-width: 100%;
 	box-sizing: border-box;
-	background: $pad-color;
+	background: $pad-background;
 
 	padding: $pad-padding;
 
 	display: flex;
 	flex-direction: column;
+}
+
+.notepad-blank {
+	background: inherit !important;
 }
 
 .notepad-column {
@@ -46,6 +55,15 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-around;
+}
+
+.note-image {
+	background-color: auto;
+	padding: 0;
+
+	/* Make sure to set the image with background-image: url(); */
+	background-size: cover;
+	background-position: center;
 }
 
 .ruled {
